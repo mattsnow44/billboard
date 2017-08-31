@@ -1,0 +1,9 @@
+<h1>Add Song to <%= @chart.name %></h1>
+
+<ol>
+  <% @songs.each do |song| %>
+    <li><%= link_to song.title, add_chart_song_path(@chart, song), method: :post %></li>
+  <% end %>
+</ol>
+
+<%= link_to 'Home', root_path %>

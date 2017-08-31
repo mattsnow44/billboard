@@ -1,0 +1,18 @@
+<h1><%= @chart.name %></h1>
+
+<table>
+  <tr>
+    <th scope="col">Title</th>
+    <th scope="col">Artist</th>
+  </tr>
+  <% @chart.songs.each do |song| %>
+  <tr>
+    <td><%= song.title %></td>
+    <td><%= song.artist.name %></td>
+    <td><%= link_to 'Remove', delete_chart_song_path(@chart, song) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Add Song', new_chart_song_path(@chart) %>
+<%= link_to 'Home', root_path %>

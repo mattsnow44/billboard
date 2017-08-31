@@ -1,0 +1,11 @@
+<h1>Billboard Charts!!</h1>
+
+<ol>
+  <% @charts.each do |chart| %>
+    <li><%= link_to chart.name, chart_path(chart.id) %></li>
+  <% end %>
+</ol>
+
+<%= link_to 'New Chart', new_chart_path %>
+<br>
+<%= link_to 'View Artists', artists_path %>
